@@ -1,104 +1,106 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: hsl(47, 88%, 63%);
-  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 .view {
-  background-color: hsl(47, 88%, 63%);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-  height: 80vh;
+  min-height: 90vh;
+  padding: 20px; /* prevents touching screen edges */
 }
 
-* {
-  margin: 0;
-}
+/* ================= CARD ================= */
+
 .card {
   background-color: #fff;
-  width: 375px;
+  width: 100%;
+  max-width: 375px; /* keeps desktop size */
   border-radius: 15px;
-  border: solid;
-  border-width: 2px;
-  box-shadow: 5px 5px 0px rgba(00, 00, 00, 1);
+  border: 2px solid #000;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
   overflow: hidden;
-  height: fit-content;
-  scale: 125%;
 }
 
+/* ================= IMAGE ================= */
+
 .image-box {
-  display: flex;
-  justify-content: center;
+  width: calc(100% - 40px);
+  margin: 20px auto 0 auto;
   border-radius: 8px;
   overflow: hidden;
-  /* background-color: red; */
-  width: 335px;
-  height: min-content;
-  margin-top: 20px;
-  margin-left: 20px;
 }
 
 .image-box .display {
   width: 100%;
+  display: block;
 }
 
-p {
-  @font-face {
-    font-family: figtree;
-    src:;
-  }
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
+/* ================= TEXT ================= */
 
 .tag {
   background-color: hsl(47, 88%, 63%);
   padding: 5px 10px;
   width: fit-content;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin: 20px 0 0 20px;
   border-radius: 3px;
   font-weight: 600;
 }
 
 .date {
-  margin-left: 20px;
+  margin: 10px 0 0 20px;
   color: hsl(0, 0%, 42%);
-  margin-top: 10px;
-  margin-left: 20px;
+  font-size: 14px;
 }
 
 .title {
-  margin-left: 20px;
-  margin-top: 15px;
+  margin: 15px 20px 0 20px;
 }
 
 .description {
-  margin-top: 20px;
-  margin-left: 20px;
+  margin: 20px 20px 0 20px;
   color: hsl(0, 0%, 42%);
+  font-size: 14px;
 }
+
+/* ================= AUTHOR ================= */
 
 .author {
   display: flex;
   align-items: center;
-  margin-left: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 .avatar-box {
   width: 30px;
   height: 30px;
-  object-fit: contain;
 }
 
 .avatar-box .avatar {
   width: 100%;
+  display: block;
 }
 
-.author .owner {
+.owner {
   margin-left: 10px;
   font-weight: 600;
   font-size: 12px;
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
 }
